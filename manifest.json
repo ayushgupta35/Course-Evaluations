@@ -1,0 +1,26 @@
+{
+    "manifest_version": 3,
+    "name": "Course Evaluation Scraper",
+    "version": "1.0",
+    "description": "Scrapes course evaluation data from the Washington University CEC site.",
+    "permissions": [
+      "scripting",
+      "activeTab",
+      "storage"
+    ],
+    "host_permissions": [
+      "https://www.washington.edu/*"
+    ],
+    "action": {
+      "default_popup": "popup.html"
+    },
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://www.washington.edu/*"],
+        "js": ["content.js"]
+      }
+    ]
+  }  
